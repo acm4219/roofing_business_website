@@ -16,19 +16,19 @@ function App() {
           <Route exact path="/">
             <Entry />
           </Route>
-          <Route>
+          <Route path="/about">
             <About />
           </Route>
-          <Route>
+          <Route path="/backend">
             <Backend />
           </Route>
-          <Route>
+          <Route path="/form">
             <FormPage />
           </Route>
-          <Route>
+          <Route path="/leads">
             <LeadPage />
           </Route>
-          <Route>
+          <Route path="/product">
             <Products />
           </Route>
         </Switch>
