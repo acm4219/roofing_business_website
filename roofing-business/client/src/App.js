@@ -28,7 +28,7 @@ function App() {
           <Route path="/leads">
             <LeadPage />
           </Route>
-          <Route path="/product">
+          <Route path="/products">
             <Products />
           </Route>
         </Switch>

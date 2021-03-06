@@ -1,9 +1,10 @@
 import React from 'react'
+import AboutSection from "../components/AboutSection"
 
 function About() {
     return (
-        <div>
-            
+        <div className="mt-3">
+            <AboutSection />
         </div>
     )
 }
