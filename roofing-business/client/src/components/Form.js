@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
+ 
 function Form() {
     return (
         <div className="container">
@@ -33,7 +34,7 @@ function Form() {
                     <label for="additionalinfo">Any additional information?</label>
                     <textarea className="form-control" rows="3"></textarea>
                 </div>
-                <button className="btn btn-lg btn-primary">Submit</button>
+                <Link to="/backend" className="btn btn-lg btn-primary">Submit</Link>
             </form>
         </div>
     )
