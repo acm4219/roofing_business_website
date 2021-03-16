@@ -6,6 +6,9 @@ function Form() {
         <div className="container">
             <form>
                 <div className="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" className="form-control" id="nameInput" />
+                    <small className="form-text text-muted">Please enter your Name</small>
                     <label for="email">Email Address</label>
                     <input type="email" className="form-control" id="emailInput" />
                     <small className="form-text text-muted">Please enter your email</small>
