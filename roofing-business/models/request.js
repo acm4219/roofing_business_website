@@ -28,12 +28,12 @@ module.exports = function (sequelize, DataTypes) {
             notEmpty: true,
         },
         service: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             notEmpty: true,
         },
         detail: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
             notEmpty: true,
         },
