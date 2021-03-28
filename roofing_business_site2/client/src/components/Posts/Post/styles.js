@@ -50,4 +50,7 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  completeButton: {
+    color: 'green'
+  }
 });
