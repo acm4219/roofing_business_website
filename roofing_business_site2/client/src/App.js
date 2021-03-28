@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import {getPosts} from "./actions/posts"
 import Posts from "./components/Posts/Posts"
 import Form from "./components/Form/Form"
-import wendy3 from "./images/wendy3.png";
+import loon from "./images/loon.png";
 import useStyles from "./styles"
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
     return (
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
-                <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
-                <img className={classes.heading} src={wendy3} alt="memories" align="center" height="100" />
+            <img className={classes.heading} src={loon} alt="memories" align="center" height="100" />
+                <Typography className={classes.heading} variant="h3" align="center">Loon Roofing and Siding</Typography>
             </AppBar>
             <Grow in>
                 <Container>
