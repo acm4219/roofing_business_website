@@ -9,10 +9,13 @@ import {createPost, updatePost} from "../../actions/posts";
 
 function Form({ currentId, setCurrentId }) {
     const [postData, setPostData] = useState({
-        creator: '', 
-        title: '', 
-        message: '', 
-        tags: '', 
+        name: '', 
+        email: '', 
+        phoneNumber: '',
+        address: '', 
+        insurance: '',
+        service: '',
+        details: '', 
         selectedFile: ''
     })
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
@@ -37,48 +40,75 @@ function Form({ currentId, setCurrentId }) {
     const clear = () => {
         setCurrentId(null);
         setPostData({
-            creator: '', 
-            title: '', 
-            message: '', 
-            tags: '', 
+            name: '', 
+            email: '', 
+            phoneNumber: '', 
+            address: '', 
+            insurance: '',
+            service: '',
+            details: '', 
             selectedFile: ''
         });
     }
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">{currentId ? "Editing" : "Creating"} a Memory</Typography>
+                <Typography variant="h6">Service Request</Typography>
                 <TextField 
-                    name="creator" 
+                    name="name" 
                     variant="outlined" 
-                    label="Creator" 
+                    label="Name" 
                     fullWidth 
-                    value={postData.creator}
-                    onChange={(e) => setPostData({ ...postData, creator: e.target.value })}
+                    value={postData.name}
+                    onChange={(e) => setPostData({ ...postData, name: e.target.value })}
                 />
                 <TextField 
-                    name="title" 
+                    name="address" 
                     variant="outlined" 
-                    label="Title" 
+                    label="Address" 
                     fullWidth 
-                    value={postData.title}
-                    onChange={(e) => setPostData({ ...postData, title: e.target.value })}
+                    value={postData.address}
+                    onChange={(e) => setPostData({ ...postData, address: e.target.value })}
                 />
                 <TextField 
-                    name="message" 
+                    name="email" 
                     variant="outlined" 
-                    label="Message" 
+                    label="Email" 
                     fullWidth 
-                    value={postData.message}
-                    onChange={(e) => setPostData({ ...postData, message: e.target.value })}
+                    value={postData.email}
+                    onChange={(e) => setPostData({ ...postData, email: e.target.value })}
                 />
                 <TextField 
-                    name="tags" 
+                    name="phoneNumber" 
                     variant="outlined" 
-                    label="Tags" 
+                    label="Phone Number" 
                     fullWidth 
-                    value={postData.tags}
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+                    value={postData.phoneNumber}
+                    onChange={(e) => setPostData({ ...postData, phoneNumber: e.target.value })}
+                />
+                <TextField 
+                    name="insurance" 
+                    variant="outlined" 
+                    label="Insurance Provider" 
+                    fullWidth 
+                    value={postData.insurance}
+                    onChange={(e) => setPostData({ ...postData, insurance: e.target.value })}
+                />
+                <TextField 
+                    name="service" 
+                    variant="outlined" 
+                    label="Service" 
+                    fullWidth 
+                    value={postData.service}
+                    onChange={(e) => setPostData({ ...postData, service: e.target.value })}
+                />
+                <TextField 
+                    name="details" 
+                    variant="outlined" 
+                    label="Any Other Details?" 
+                    fullWidth 
+                    value={postData.details}
+                    onChange={(e) => setPostData({ ...postData, details: e.target.value })}
                 />
                 <div className={classes.fileInput}>
                     <FileBase 
