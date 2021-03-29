@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import { TextField, Button, ButtonGroup, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
@@ -111,14 +111,17 @@ function Form({ currentId, setCurrentId }) {
                     onChange={(e) => setPostData({ ...postData, details: e.target.value })}
                 />
                 <div className={classes.fileInput}>
+                    <p>Please add a photo of the house if you would like.</p>
                     <FileBase 
                         type="file"
                         multiple={false}
                         onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}
                     />
                 </div>
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                <ButtonGroup>
+                    <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                    <Button variant="contained" className={classes.buttonSubmit} color="secondary" size="large" onClick={clear} fullWidth>Clear</Button>
+                </ButtonGroup>
             </form>
         </Paper>
     )

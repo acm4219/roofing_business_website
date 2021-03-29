@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Container, AppBar, Typography, Grow, Grid} from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Container, AppBar, Typography, Grow } from "@material-ui/core";
 import { useDispatch } from 'react-redux'
 
-import {getPosts} from "./actions/posts"
-import Posts from "./components/Posts/Posts"
-import Form from "./components/Form/Form"
+import {getPosts} from "./actions/posts";
+import Posts from "./views/Request";
+import Form from "./views/Form";
+import Entry from "./views/Entry/Entry";
 import loon from "./images/loon.png";
 import useStyles from "./styles"
 
@@ -18,24 +21,32 @@ function App() {
     }, [currentId, dispatch]);
 
     return (
+        <Router>
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
             <img className={classes.image} src={loon} alt="memories" align="center" height="100" />
-                <Typography className={classes.heading} variant="h3" align="center">Loon Roofing and Siding</Typography>
+                <Typography className={classes.heading} variant="h2" align="center" component={Link} to="/">Loon Roofing</Typography>
             </AppBar>
             <Grow in>
                 <Container>
-                    <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-                        <Grid item xs={12} sm={7}>
-                            <Posts setCurrentId={setCurrentId}/>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Form  currentId={currentId} setCurrentId={setCurrentId}/>
-                        </Grid>
-                    </Grid>
+                    <Switch>
+                        <Route exact path="/">
+                            <Entry />
+                        </Route>
+                        <Route path="/requestform">
+                            <Form />
+                        </Route>
+                        <Route path="/requests">
+                            <Posts />
+                        </Route>
+                    </Switch>
                 </Container>
             </Grow>
         </Container>
+        <br />
+        </Router>
+
+        
     )
 }
 
