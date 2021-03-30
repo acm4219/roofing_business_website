@@ -3,7 +3,7 @@ import { TextField, Button, ButtonGroup, Typography, Paper } from "@material-ui/
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
-
+import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import {createPost, updatePost} from "../../actions/posts";
 
@@ -118,10 +118,14 @@ function Form({ currentId, setCurrentId }) {
                         onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}
                     />
                 </div>
+                <div className={classes.fileInput}>
+                    <p>When submitting this form you will be redirected back to our home page.</p>
+                </div>
                 <ButtonGroup>
-                    <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                    <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth component={Link} to="/">Submit</Button>
                     <Button variant="contained" className={classes.buttonSubmit} color="secondary" size="large" onClick={clear} fullWidth>Clear</Button>
                 </ButtonGroup>
+                
             </form>
         </Paper>
     )
