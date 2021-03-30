@@ -25,7 +25,7 @@ function App() {
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
             <img className={classes.image} src={loon} alt="memories" align="center" height="100" />
-                <Typography className={classes.heading} variant="h2" align="center" component={Link} to="/">Loon Roofing</Typography>
+                <Typography className={classes.heading} variant="h2" align="center" component={Link} to="/requests">Loon Roofing</Typography>
             </AppBar>
             <Grow in>
                 <Container>
