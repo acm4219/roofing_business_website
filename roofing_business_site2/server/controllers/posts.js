@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import PostMessage from "../models/postMessage.js"
-import CreateUser from "../models/admin.js"
 
 export const getPosts = async (req, res) => {
     try{
@@ -14,19 +13,6 @@ export const getPosts = async (req, res) => {
     }
 }
 
-export const getUser = async (req, res) => {
-    try{
-        const users = await CreateUser.find();
-
-        console.log(users);
-
-        res.status(200).json(users);
-
-    } catch(err) {
-        res.status(404).json({ message: err.message });
-    }
-}
-
 export const createPost = async (req, res) => {
     const post = req.body;
 
@@ -36,19 +22,6 @@ export const createPost = async (req, res) => {
         await newPost.save();
 
         res.status(201).json(newPost);
-    } catch(err) {
-        res.status(409).json({ message: err.message });
-    }
-}
-
-export const createUser = async (req, res) => {
-    const user = req.body;
-
-    const newUser = CreateUser(user);
-
-    try {
-        await newUser.save();
-        res.status(201).json(newUser);
     } catch(err) {
         res.status(409).json({ message: err.message });
     }
