@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <div className={classes.brandContainer}>
-        <img className={classes.image} src={loon} alt="icon" height="60" />
+        <img className={classes.image} src={loon} alt="icon" height="100" />
         <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Loon Roofing</Typography>
       </div>
     </AppBar>

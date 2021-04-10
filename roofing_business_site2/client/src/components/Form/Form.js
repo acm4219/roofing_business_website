@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import useStyles from "./styles";
 import {createPost, updatePost} from "../../actions/posts";
 
-function Form({ currentId, setCurrentId }) {
+function Form({ currentId, setCurrentId, history }) {
     const [postData, setPostData] = useState({
         name: '', 
         email: '', 
@@ -35,9 +35,11 @@ function Form({ currentId, setCurrentId }) {
             dispatch(createPost(postData))
         }
         clear();
+        history.push('/');
     }
+    
     const clear = () => {
-        setCurrentId(null);
+        // setCurrentId(null);
         setPostData({
             name: '', 
             email: '', 
@@ -48,6 +50,7 @@ function Form({ currentId, setCurrentId }) {
             details: '', 
             selectedFile: ''
         });
+
     }
     return (
         <Paper className={classes.paper}>
