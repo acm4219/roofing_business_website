@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Entry from "./views/Entry/Entry";
 import Requests from "./views/Request";
-import Form from "./components/Form";
+import Form from "./components/Form/Form";
 import Auth from "./components/Auth/Auth";
 import Footer from "./components/Footer/Footer";
 
@@ -15,7 +15,7 @@ function App() {
         <Router>
          <Container maxWidth="lg">
              <Navbar />
-                <Grow in>
+                
                     <Container>
                         <Switch>
                             <Route path="/" exact component={Entry} />
@@ -24,7 +24,7 @@ function App() {
                             <Route path="/requests" exact component={Requests} />
                         </Switch>
                     </Container>
-                </Grow>
+               
              <Footer />
          </Container> 
         <br />

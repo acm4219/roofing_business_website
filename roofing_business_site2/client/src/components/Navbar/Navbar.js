@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Typography } from '@material-ui/core';
 import loon from "../../images/loon.png";
+import { Link } from "react-router-dom";
 import useStyles from './styles';
 
 const Navbar = () => {
