@@ -24,7 +24,19 @@ function Form({ currentId, setCurrentId, history }) {
     useEffect(() => {
         if(post) setPostData(post);
     }, [post])
+    const clear = () => {
+        setPostData({
+            name: '', 
+            email: '', 
+            phoneNumber: '', 
+            address: '', 
+            insurance: '',
+            service: '',
+            details: '', 
+            selectedFile: ''
+        });
 
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -38,20 +50,7 @@ function Form({ currentId, setCurrentId, history }) {
         history.push('/');
     }
     
-    const clear = () => {
-        // setCurrentId(null);
-        setPostData({
-            name: '', 
-            email: '', 
-            phoneNumber: '', 
-            address: '', 
-            insurance: '',
-            service: '',
-            details: '', 
-            selectedFile: ''
-        });
-
-    }
+    
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>

@@ -37,7 +37,7 @@ export const Footer = () => {
     const classes = useStyles();
 
     return (
-      <AppBar className={classes.appBar} position="static" color="inherit">
+      
         <Toolbar className={classes.toolbar}>
             {user?.result ? (
             <div className={classes.profile}>
@@ -49,7 +49,7 @@ export const Footer = () => {
             <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
             )}
         </Toolbar>
-      </AppBar>
+      
     )
 }
 
