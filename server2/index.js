@@ -14,10 +14,10 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use('/user', userRoutes);
 
-
+const CONNECTION_URL = 'mongodb://LoonAdmin1:tQ6cyEtveT37QXC@acm4219-loonroofing-mongo-production/loonroofing';
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
  .then(() => {
     app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
  })

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/"})
+const API = axios.create({ baseURL: "https://loonroofing-backend.zeet.app"})
 // const url = "https://loon-roofing2.herokuapp.com/posts";
 
 export const fetchPosts = () => API.get('/posts');
