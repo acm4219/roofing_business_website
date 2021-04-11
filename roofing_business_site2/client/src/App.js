@@ -7,7 +7,7 @@ import Entry from "./views/Entry/Entry";
 import Requests from "./views/Request";
 import Form from "./components/Form/Form";
 import Auth from "./components/Auth/Auth";
-import Footer from "./components/Footer/Footer";
+
 
 function App() {
     
@@ -24,8 +24,6 @@ function App() {
                             <Route path="/requests" exact component={Requests} />
                         </Switch>
                     </Container>
-               
-             <Footer />
          </Container> 
         <br />
         </Router>

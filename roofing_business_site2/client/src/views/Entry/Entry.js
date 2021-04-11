@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Typography, Card, CardContent, Grid, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
+import SigninButton from "../../components/SigninButton/SigninButton";
 
 function Entry() {
     const classes = useStyles();
@@ -52,6 +53,7 @@ function Entry() {
       }
 
     return (
+      <div>
         <Card className={classes.root}>
             <CardContent>
                 <Typography gutterBottom variant="h3" component="h2" align="center">
@@ -78,6 +80,10 @@ function Entry() {
                 
             </CardContent>
         </Card>
+        <br />
+        <SigninButton />
+        </div>
+        
     )
 }
 
