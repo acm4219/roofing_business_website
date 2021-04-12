@@ -8,7 +8,7 @@ export const signin = (formData, history) => async (dispatch) => {
 
        history.push('/requests');
     } catch(err) {
-        console.log(err.response.data)
+        console.log(err)
     }
 }
 
