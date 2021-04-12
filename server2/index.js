@@ -14,7 +14,7 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use('/user', userRoutes);
 
-const CONNECTION_URL = 'mongodb://LoonAdmin1:Ks9XJ5MA8C@acm4219-loonroofing-mongo-production/loonroofing';
+const CONNECTION_URL = 'mongodb://LoonAdmin1:Ks9XJ5MA8C@acm4219-loonroofing-mongo-production/admin';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
