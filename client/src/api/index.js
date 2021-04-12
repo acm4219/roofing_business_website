@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/"})
+const API = axios.create({ baseURL: "https://acm4219-loonroofing-backend.zeet.app/"})
+// const API = axios.create({ baseURL: "http://localhost:5000/"})
 
 
 export const fetchPosts = () => API.get('/posts');
